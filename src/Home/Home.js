@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { colors } from './colors'
+import LogoutButton from '../LogoutButton/LogoutButton'
+import { useAuth0 } from "@auth0/auth0-react";
 import './Home.scss'
 
 const Home = () => {
+  const { user, isAuthenticated, isLoading, loginWithRedirect } = useAuth0()
   const [backgroundColor, setBackgroundColor] = useState('red')
   const [browserSize, updateBrowserSize] = useState({height: Math.ceil(document.documentElement.clientHeight/60), width: Math.ceil(document.documentElement.clientWidth/60)})
   
@@ -34,6 +37,10 @@ const Home = () => {
     return colorPalette
   }
 
+  const verifyAuthentication = () => {
+    !isAuthenticated ? loginWithRedirect() : alert(`Welcomet to the app ${user.name}!`)
+  }
+
   return(
     <div className='home-container'>
     <div className='box-container' style={ boxContainerStyles }>
@@ -41,9 +48,10 @@ const Home = () => {
     </div>
     <div className='title-container'>
       <h1 className='title'>Daily Mood</h1>
-      <button className='enter-button'>
+      <button className='enter-button' onClick={verifyAuthentication}>
         <span>ENTER</span>
       </button>
+      {isAuthenticated && <LogoutButton />}
     </div>
   </div>
   )
