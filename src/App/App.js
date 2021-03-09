@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import { Switch, Route } from 'react-router-dom'
 import Home from '../Home/Home'
 import './App.scss';

@@ -5,7 +5,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import './Home.scss'
 
 const Home = () => {
-  const { user, isAuthenticated, isLoading, loginWithRedirect } = useAuth0()
+  const { user, isAuthenticated, loginWithRedirect } = useAuth0()
   const [backgroundColor, setBackgroundColor] = useState('red')
   const [browserSize, updateBrowserSize] = useState({height: Math.ceil(document.documentElement.clientHeight/60), width: Math.ceil(document.documentElement.clientWidth/60)})
   
