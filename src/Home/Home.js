@@ -1,9 +1,17 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { colors } from './colors'
 import './Home.scss'
 
 const Home = () => {
+  const [backgroundColor, setBackgroundColor] = useState('red')
   const [browserSize, updateBrowserSize] = useState({height: Math.ceil(document.documentElement.clientHeight/60), width: Math.ceil(document.documentElement.clientWidth/60)})
   
+  useEffect(() => {
+    let color = ['red', 'yellow', 'green', 'purple', 'blue', 'orange', 'tan', 'pink', 'gray']
+    let randomColor = Math.floor(Math.random() * color.length)
+    setBackgroundColor(color[randomColor])
+  }, [])
+
   const boxContainerStyles = {
     display: 'grid',
     gridTemplateColumns: `repeat(${browserSize.width}, 60px)`,
@@ -14,9 +22,15 @@ const Home = () => {
     let boxNum = browserSize.height * browserSize.width
     let boxes = []
     for (let i = 0; i < boxNum; i++) {
-      boxes.push(<div className={`box ${i}`}></div>)
+      boxes.push(<div className={`box ${i} ${generateRandomColor()}`} key={`box-${i}`}></div>)
     }
     return boxes
+  }
+
+  const generateRandomColor = () => {
+    let randomIndex = Math.floor(Math.random() * 4)
+    let colorPalette = colors[backgroundColor][randomIndex]
+    return colorPalette
   }
 
   return(

@@ -1,18 +1,13 @@
+@import '../variables.scss';
+
 .home-container {
   display: flex;
   justify-content: center;
 }
 
-// .box-container {
-  // display: grid;
-  // grid-template-columns: repeat(21, 60px);
-  // position: absolute;
-// }
-
 .box {
   height: 50px;
   width: 50px;
-  background-color: lightblue;
   border: 1px solid black;
   margin: 3px;
 }
@@ -31,4 +26,148 @@
   height: 40px;
   outline: none;
   border: 1px solid black;
+}
+
+.red {
+  background-color: $angryred;
+}
+
+.red1 {
+  background-color: $angryred1;
+}
+
+.red2 {
+  background-color: $angryred2;
+}
+
+.red3 {
+  background-color: $angryred3;
+}
+
+.orange {
+  background-color: $frustratedorange;
+}
+
+.orange1 {
+  background-color: $frustratedorange1;
+}
+
+.orange2 {
+  background-color: $frustratedorange2;
+}
+
+.orange3 {
+  background-color: $frustratedorange3;
+}
+
+.yellow {
+  background-color: $happyyellow;
+}
+
+.yellow1 {
+  background-color: $happyyellow1
+}
+
+.yellow2 {
+  background-color: $happyyellow2;
+}
+
+.yellow3 {
+  background-color: $happyyellow3;
+}
+
+.green {
+  background-color: $sickgreen;
+}
+
+.green1 {
+  background-color: $sickgreen1;
+}
+
+.green2 {
+  background-color: $sickgreen2;
+}
+
+.green3 {
+  background-color: $sickgreen3;
+}
+
+.blue {
+  background-color: $anxiousblue;
+}
+
+.blue1 {
+  background-color: $anxiousblue1;
+}
+
+.blue2 {
+  background-color: $anxiousblue2;
+}
+
+.blue3 {
+  background-color: $anxiousblue3;
+}
+
+.purple {
+  background-color: $excitedpurple;
+}
+
+.purple1 {
+  background-color: $excitedpurple1;
+}
+
+.purple2 {
+  background-color: $excitedpurple2;
+}
+
+.purple3 {
+  background-color: $excitedpurple3;
+}
+
+.tan {
+  background-color: $sadtan;
+}
+
+.tan1 {
+  background-color: $sadtan1;
+}
+
+.tan2 {
+  background-color: $sadtan2;
+}
+
+.tan3 {
+  background-color: $sadtan3;
+}
+
+.pink {
+  background-color: $proudpink;
+}
+
+.pink1 {
+  background-color: $proudpink1;
+}
+
+.pink2 {
+  background-color: $proudpink2;
+}
+
+.pink3 {
+  background-color: $proudpink3;
+}
+
+.gray {
+  background-color: $confusedgray;
+}
+
+.gray1 {
+  background-color: $confusedgray1;
+}
+
+.gray2 {
+  background-color: $confusedgray2;
+}
+
+.gray3 {
+  background-color: $confusedgray3;
 }
