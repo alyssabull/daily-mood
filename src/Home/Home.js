@@ -7,7 +7,8 @@ const Home = () => {
   const [browserSize, updateBrowserSize] = useState({height: Math.ceil(document.documentElement.clientHeight/60), width: Math.ceil(document.documentElement.clientWidth/60)})
   
   useEffect(() => {
-    let color = ['red', 'yellow', 'green', 'purple', 'blue', 'orange', 'tan', 'pink', 'gray']
+    window.addEventListener('resize', updateBrowserSize({height: Math.ceil(document.documentElement.clientHeight/60), width: Math.ceil(document.documentElement.clientWidth/60)}))
+    let color = ['red', 'yellow', 'green', 'purple', 'blue', 'orange', 'tan', 'pink']
     let randomColor = Math.floor(Math.random() * color.length)
     setBackgroundColor(color[randomColor])
   }, [])
@@ -40,7 +41,9 @@ const Home = () => {
     </div>
     <div className='title-container'>
       <h1 className='title'>Daily Mood</h1>
-      <button className='enter-button'>ENTER</button>
+      <button className='enter-button'>
+        <span>ENTER</span>
+      </button>
     </div>
   </div>
   )

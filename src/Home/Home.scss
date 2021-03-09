@@ -26,7 +26,7 @@
   font-family: $title-font;
   font-weight: 600;
   color: white;
-  text-shadow: -3px -3px 0 #000, 3px -3px 0 #000, -3px 3px 0 #000, 3px 3px 0 #000;
+  text-shadow: 6px 7px black;
 }
 
 .enter-button {
@@ -38,6 +38,36 @@
   outline: none;
   border: 1px solid black;
   background-color: white;
+}
+
+.enter-button:hover {
+  transition: 0.5s;
+  transform: scale(1.2);
+}
+
+.enter-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.enter-button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.enter-button:hover span {
+  padding-right: 25px;
+}
+
+.enter-button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .red {
@@ -166,20 +196,4 @@
 
 .pink3 {
   background-color: $proudpink3;
-}
-
-.gray {
-  background-color: $confusedgray;
-}
-
-.gray1 {
-  background-color: $confusedgray1;
-}
-
-.gray2 {
-  background-color: $confusedgray2;
-}
-
-.gray3 {
-  background-color: $confusedgray3;
 }
